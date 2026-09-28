@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "devDependencies": {
-    "@topcoat-cloudflare/adapter": "0.1.0",
+    "@topcoat-cloudflare/adapter": "0.2.0",
     "wrangler": "4.142.0"
   },
   "allowScripts": {

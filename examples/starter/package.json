@@ -8,7 +8,7 @@
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
-    "@topcoat-cloudflare/adapter": "0.1.0",
+    "@topcoat-cloudflare/adapter": "0.2.0",
     "@tailwindcss/cli": "4.3.2",
     "wrangler": "4.142.0"
   }

@@ -6,7 +6,7 @@ edition = "2024"
 license = "MIT"
 
 [dependencies]
-topcoat-cloudflare = "=0.1.0"
+topcoat-cloudflare = "=0.2.0"
 wasm-bindgen = "0.2"
 
 [dependencies.topcoat]

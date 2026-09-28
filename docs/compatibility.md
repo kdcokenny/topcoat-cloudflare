@@ -32,7 +32,7 @@ For binding access, assets, and timers, see [integration](integration.md).
 
 ## Real application coverage
 
-These checks use published adapter 0.1.0 in local workerd. Runnable apps have been ported; they are not unchanged native applications. [Source revisions and licenses](../tests/sites/sources.ts) are pinned.
+These checks use published adapter 0.2.0 in local workerd. Runnable apps have been ported; they are not unchanged native applications. [Source revisions and licenses](../tests/sites/sources.ts) are pinned.
 
 | ID / project                                                                                           | Result             | Main adaptation or blocker                                                   |
 | ------------------------------------------------------------------------------------------------------ | ------------------ | ---------------------------------------------------------------------------- |

@@ -43,7 +43,7 @@ Create the `release` environment in the GitHub repository settings. On npm, allo
 
 ## Publish a release
 
-Update the workspace and npm package versions together. Preparation rejects mismatched versions. Generated toolchain metadata comes from the repository manifests; do not edit it by hand. Confirm that documentation links are accessible to package users.
+Update the workspace and npm package versions together, including the Rust dependency in the installation guide. Preparation rejects mismatched package versions. Generated toolchain metadata comes from the repository manifests; do not edit it by hand. Confirm that documentation links are accessible to package users.
 
 Commit the release changes and create a version tag such as `v0.2.0`. In GitHub Actions, open **Release → Run workflow** and select that tag.
 
@@ -56,3 +56,5 @@ node tests/consumer.ts artifacts/release --registry
 ```
 
 Keep the tested Rust, Topcoat, worker-build, and npm package combination in the release notes. The registry installation check confirms that the published packages are available and work together.
+
+After publication, update the adapter dependencies and lockfiles in `examples/` and `tests/sites/locks/`, then run `npm run test:sites` against the published packages.

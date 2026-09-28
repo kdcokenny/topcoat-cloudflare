@@ -1473,9 +1473,9 @@ dependencies = [
 
 [[package]]
 name = "topcoat-cloudflare"
-version = "0.1.0"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "33be7d3565e79a447200d8603625c969fb40d0ee357e6e31934b239812ec3fa6"
+checksum = "404101a1aca362945f4b529f155ee91faab3e6b5c123e36085cc5517d3944829"
 dependencies = [
  "http",
  "http-body",

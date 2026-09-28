@@ -76,6 +76,14 @@ jobs:
         with:
           node-version: '24.21.0'
           package-manager-cache: false
+      - name: Wait for npm availability
+        timeout-minutes: 10
+        run: |
+          package=$(jq -r '.npmPackage + "@" + .version' artifacts.json)
+          registry_poll_interval=10
+          until npm view "$package" version --prefer-online; do
+            sleep "$registry_poll_interval"
+          done
       - run: node consumer.ts . --registry
         env:
           TOPCOAT_CONSUMER_ISOLATED: '1'
