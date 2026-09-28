@@ -1,0 +1,37 @@
+[package]
+name = "ui"
+publish = false
+version = "0.9.0"
+edition = "2024"
+license = "MIT"
+
+[dependencies]
+topcoat-cloudflare = "=0.1.0"
+wasm-bindgen = "0.2"
+
+[dependencies.topcoat]
+version = "=0.9.0"
+default-features = false
+features = ["router", "view", "asset", "runtime", "discover", "font-fontsource", "icon"]
+
+[dependencies.worker]
+version = "=0.8.7"
+features = ["http"]
+
+[dependencies.topcoat-icon-macro]
+version = "=0.9.0"
+features = ["iconify"]
+
+[build-dependencies.topcoat]
+version = "=0.9.0"
+default-features = false
+features = ["tailwind", "icon-iconify"]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[workspace]
+resolver = "2"
+
+[lib]
+crate-type = ["cdylib", "rlib"]

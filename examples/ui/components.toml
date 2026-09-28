@@ -1,0 +1,133 @@
+# Topcoat UI install state. Managed by `topcoat ui`.
+version = 1
+components_dir = "src/components"
+
+[theme]
+name = "neutral"
+registry = "topcoat"
+hash = "sha256:6e451a2d3470b0ee544ccf4240da8631bad4c807a06ae0d3a1fc77154b86c3b9"
+file = "styles.css"
+
+[registries.topcoat.components.accordion]
+hash = "sha256:201009cf7fee67a40c6be4948f03147f078ccad495ba5ac69f76fdaa64a89c47"
+file = "src/components/accordion.rs"
+
+[registries.topcoat.components.alert]
+hash = "sha256:cb2c77c156e580853e877923e08108adca6a3645060f0ae04a14325ccac5f769"
+file = "src/components/alert.rs"
+
+[registries.topcoat.components.alert_dialog]
+hash = "sha256:59329070384145eceb1ac54aab6143862415024a10d461892395c11bf927db38"
+file = "src/components/alert_dialog.rs"
+
+[registries.topcoat.components.avatar]
+hash = "sha256:606de70a794bea536dc2c419a9e0069a82537556da0829112a52a5934cc69c12"
+file = "src/components/avatar.rs"
+
+[registries.topcoat.components.badge]
+hash = "sha256:1601ea9b4650a1d90483a4d9497d413c05d4f72ed6db2f57a2549f65db393d88"
+file = "src/components/badge.rs"
+
+[registries.topcoat.components.breadcrumb]
+hash = "sha256:c687399a226cf6cd05b015f95d5bbe00a314d7176c540f4362dadd9c0424e22c"
+file = "src/components/breadcrumb.rs"
+
+[registries.topcoat.components.button]
+hash = "sha256:260ed94b12414e4a0e625f75fae88aa51e20954171dcba65cb3cd1937a75ee4d"
+file = "src/components/button.rs"
+
+[registries.topcoat.components.card]
+hash = "sha256:0d0599fb85b42d341aea108fadb25937afdd47b0521d1246dc2bf3bda42f1367"
+file = "src/components/card.rs"
+
+[registries.topcoat.components.checkbox]
+hash = "sha256:e6ffefb0bf8890492b98ef8fb64385544ce9a55f5ecf505ff40e64caef259385"
+file = "src/components/checkbox.rs"
+
+[registries.topcoat.components.dialog]
+hash = "sha256:df9073df351770ee0282b9c64b7724caa0422fb51d7823fd3615688f4d02ddf6"
+file = "src/components/dialog.rs"
+
+[registries.topcoat.components.dropdown_menu]
+hash = "sha256:129cb6ba0cac7053435d3481092fe2186cd26e9b52d02405790f6f84ec098431"
+file = "src/components/dropdown_menu.rs"
+
+[registries.topcoat.components.field]
+hash = "sha256:17438c510d30440dfa2ca38f888cd5503e292c9475b5f09de59b45edd35ebac0"
+file = "src/components/field.rs"
+
+[registries.topcoat.components.hover_card]
+hash = "sha256:37484ded8b331803afb1532ec9f4824311495daef5ffbe14a7ae1cff0c7a6990"
+file = "src/components/hover_card.rs"
+
+[registries.topcoat.components.input]
+hash = "sha256:7fe8728a839a821af865711347189a00c29ba28b8b11dcc0d2ee06a053ca127c"
+file = "src/components/input.rs"
+
+[registries.topcoat.components.kbd]
+hash = "sha256:6ba351e9bb3574fc5e945abc6b4d97ee3d0403788e2efe103c978445f4ffd559"
+file = "src/components/kbd.rs"
+
+[registries.topcoat.components.label]
+hash = "sha256:6741fe1cf51bea5cfe0d0c8d25548e452661d9017529a7163bc5b60ce725a8d5"
+file = "src/components/label.rs"
+
+[registries.topcoat.components.pagination]
+hash = "sha256:e3a01c26e38ad5b5c93c32f56cbd148f1e102d8691a107a837d1b80a15670cfb"
+file = "src/components/pagination.rs"
+
+[registries.topcoat.components.progress]
+hash = "sha256:7e04f102854af9a4c244965d4e76b620edc11aff65abca8c4ce1b0ed55f99cda"
+file = "src/components/progress.rs"
+
+[registries.topcoat.components.radio_group]
+hash = "sha256:cdc2833428c28897c5b35be5ce2b3583aefaf5dcd7b894d5316c4f9db6d97479"
+file = "src/components/radio_group.rs"
+
+[registries.topcoat.components.select]
+hash = "sha256:796d685bbefa46c8bb2d4f1404fbfbdaa1a61c0dc8260cceda7eed66b495413d"
+file = "src/components/select.rs"
+
+[registries.topcoat.components.separator]
+hash = "sha256:7ba5a7628128e1811e960884bd56da34f754c1d516230b4442dfbc1cb97e73e9"
+file = "src/components/separator.rs"
+
+[registries.topcoat.components.sheet]
+hash = "sha256:b1149fd0c5b263dc73d511ee056b56416aad7f570cfdac13a430ccb6d4047132"
+file = "src/components/sheet.rs"
+
+[registries.topcoat.components.sidebar]
+hash = "sha256:08444f46d98808fcd942dac3db5a400d11116f38508aa3e2cd67c1ea6269a393"
+file = "src/components/sidebar.rs"
+
+[registries.topcoat.components.skeleton]
+hash = "sha256:3b6d99ca9aef02697ce1142903bd49062ef9f2bd4ecbb1e6b82be0ea6554d1a5"
+file = "src/components/skeleton.rs"
+
+[registries.topcoat.components.spinner]
+hash = "sha256:77506179aea385b0507bf9ddae18f7df19ca59e7e755b9f69f0f57c5e75c5c61"
+file = "src/components/spinner.rs"
+
+[registries.topcoat.components.switch]
+hash = "sha256:95bfdf7d4da32400663f0f82e403cd7857efb154291e2cb8dc23ab33b5ce0b9d"
+file = "src/components/switch.rs"
+
+[registries.topcoat.components.table]
+hash = "sha256:a6b8a367f9d26d918521375a64e51ef88ca2e3854edd2a091a63ecf0e2cb09d6"
+file = "src/components/table.rs"
+
+[registries.topcoat.components.tabs]
+hash = "sha256:40ebd1db38df79a104b253edfefc3282ba15275b575907609fd1b81ad8ace419"
+file = "src/components/tabs.rs"
+
+[registries.topcoat.components.textarea]
+hash = "sha256:8f1d824fcc2ed9efceac672630d3b09eada9079b706144112d97fc98f613a5b5"
+file = "src/components/textarea.rs"
+
+[registries.topcoat.components.toggle]
+hash = "sha256:94a5bb621214d3aaa2abc29b79392fdb6f7706129596de9a8b66567f5fc1f15a"
+file = "src/components/toggle.rs"
+
+[registries.topcoat.components.tooltip]
+hash = "sha256:78a5dc28cfc2e6472ed7ad425cff7fd0c3640322f89729fff07d2c9ef08bdf1c"
+file = "src/components/tooltip.rs"

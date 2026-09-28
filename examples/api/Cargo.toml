@@ -1,0 +1,52 @@
+[package]
+name = "topcoat-quiz"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "GPL-3.0-only"
+
+[dependencies]
+rand = "0.10.3"
+topcoat-cloudflare = "=0.1.0"
+wasm-bindgen = "0.2"
+serde_json = "1"
+
+[dependencies.reqwest]
+version = "=0.13.5"
+default-features = false
+features = ["json", "query"]
+
+[dependencies.serde]
+version = "1.0.229"
+features = ["derive"]
+
+[dependencies.topcoat]
+version = "=0.9.0"
+default-features = false
+features = ["router", "view", "asset", "runtime", "discover", "font-fontsource", "icon"]
+
+[dependencies.worker]
+version = "=0.8.7"
+features = ["http"]
+
+[dependencies.topcoat-icon-macro]
+version = "=0.9.0"
+features = ["iconify"]
+
+[dependencies.getrandom]
+version = "0.4"
+features = ["wasm_js"]
+
+[build-dependencies.topcoat]
+version = "=0.9.0"
+default-features = false
+features = ["tailwind", "icon-iconify"]
+
+[workspace]
+resolver = "2"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[lints.rust]
+unsafe_code = "forbid"

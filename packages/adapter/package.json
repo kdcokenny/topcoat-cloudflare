@@ -1,0 +1,48 @@
+{
+  "name": "@topcoat-cloudflare/adapter",
+  "version": "0.1.0",
+  "type": "module",
+  "bin": {
+    "topcoat-cloudflare": "dist/bin/adapter.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "jsonc-parser": "3.3.1",
+    "smol-toml": "1.9.0"
+  },
+  "description": "Build and deploy Topcoat applications on Cloudflare Workers.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdcokenny/topcoat-cloudflare.git",
+    "directory": "packages/adapter"
+  },
+  "files": [
+    "dist",
+    "templates/*.ts",
+    "native/Cargo.toml",
+    "native/Cargo.lock",
+    "native/src",
+    "release.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prepare": "node ../../scripts/prepare-adapter.ts"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "wrangler": "4.142.0"
+  },
+  "exports": {
+    "./package.json": "./package.json"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.4",
+    "typescript": "7.0.2"
+  }
+}

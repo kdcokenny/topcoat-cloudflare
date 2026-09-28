@@ -1,0 +1,48 @@
+{
+  "name": "topcoat-cloudflare-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/adapter",
+    "examples/starter",
+    "tests/fixture"
+  ],
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  },
+  "scripts": {
+    "test": "npm run test:unit && npm run test:integration && npm run test:smoke && npm run test:dev",
+    "test:unit": "node --test packages/adapter/test/*.test.ts tests/sites/*.test.ts",
+    "test:integration": "playwright test",
+    "test:smoke": "playwright test --config playwright.smoke.config.ts",
+    "test:dev": "node --test tests/dev-workflow.test.ts",
+    "test:sites": "node tests/sites/run.ts",
+    "benchmark:sites": "node tests/sites/run.ts --benchmark",
+    "build": "npm run build --workspace examples/starter",
+    "dev": "npm run dev --workspace examples/starter --",
+    "deploy": "npm run deploy --workspace examples/starter --",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "check": "npm run format:check && npm run lint && npm run typecheck && node scripts/check.ts",
+    "verify": "npm run verify:runtime && npm run test:consumer",
+    "package": "node scripts/package.ts",
+    "test:consumer": "npm run package && node tests/consumer.ts artifacts/release",
+    "verify:runtime": "npm run check && npm test && npm run deploy -- --dry-run && npm audit --audit-level=high",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "oxfmt": "0.70.0",
+    "oxlint": "1.85.0",
+    "oxlint-tsgolint": "7.0.2003",
+    "wrangler": "4.142.0"
+  },
+  "packageManager": "npm@12.1.0",
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "workerd@1.20260926.1": true,
+    "@parcel/watcher@2.5.1": true
+  }
+}

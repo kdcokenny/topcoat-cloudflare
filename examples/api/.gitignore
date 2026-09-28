@@ -1,0 +1,7 @@
+node_modules/
+target/
+.topcoat-cloudflare/
+.wrangler/
+.dev.vars*
+.env*
+*.log

@@ -1,0 +1,21 @@
+{
+  "name": "topcoat-cloudflare-d1",
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "@topcoat-cloudflare/adapter": "0.1.0",
+    "wrangler": "4.142.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "workerd@1.20260926.1": true,
+    "@parcel/watcher@2.5.1": true
+  },
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "topcoat-cloudflare build"
+  },
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  }
+}

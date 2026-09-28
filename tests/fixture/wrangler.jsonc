@@ -1,0 +1,40 @@
+{
+  "name": "topcoat-cloudflare-fixture",
+  "build": {
+    "command": "npx --no-install topcoat-cloudflare build",
+    "cwd": ".",
+    "watch_dir": [
+      "src",
+      "assets",
+      "public",
+      "Cargo.toml",
+      "Cargo.lock",
+      "build.rs",
+      "styles.css",
+      "components.toml",
+      "rust-toolchain.toml",
+    ],
+  },
+  "main": ".topcoat-cloudflare/dist/entry.ts",
+  "compatibility_date": "2026-09-27",
+  "compatibility_flags": ["no_nodejs_compat", "no_nodejs_compat_v2", "enable_request_signal"],
+  "assets": {
+    "directory": ".topcoat-cloudflare/dist/public",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    "run_worker_first": ["/*", "!/_topcoat/assets/*"],
+  },
+  "rules": [{ "type": "Text", "globs": ["**/*.txt"], "fallthrough": true }],
+  "vars": { "GREETING": "request context works" },
+  "kv_namespaces": [{ "binding": "KV", "id": "fixture-local-only" }],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "fixture-local-only",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+    },
+  ],
+  "r2_buckets": [{ "binding": "BUCKET", "bucket_name": "fixture-local-only" }],
+  "send_metrics": false,
+}

@@ -1,0 +1,16 @@
+[package]
+name = "topcoat-cloudflare-build"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Package Topcoat's asset catalog for Workers Static Assets."
+publish = false
+
+[dependencies]
+percent-encoding = "2"
+topcoat-asset = { workspace = true, features = ["bundler"] }
+
+[lints]
+workspace = true

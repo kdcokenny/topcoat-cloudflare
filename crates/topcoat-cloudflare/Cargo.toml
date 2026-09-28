@@ -1,0 +1,25 @@
+[package]
+name = "topcoat-cloudflare"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Run Topcoat applications on Cloudflare Workers."
+readme = "README.md"
+keywords = ["topcoat", "cloudflare", "workers", "wasm"]
+categories = ["web-programming::http-server", "wasm"]
+
+[dependencies]
+topcoat = { workspace = true, features = ["router", "asset"] }
+worker.workspace = true
+wasm-bindgen.workspace = true
+wasm-bindgen-futures.workspace = true
+js-sys.workspace = true
+http.workspace = true
+http-body = "1"
+# Cookie removal uses time::OffsetDateTime::now_utc. Enable the JS clock on Wasm.
+time = { version = "0.3", features = ["wasm-bindgen"] }
+
+[lints]
+workspace = true

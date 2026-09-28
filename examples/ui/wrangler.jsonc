@@ -1,0 +1,35 @@
+{
+  "name": "ui",
+  "main": ".topcoat-cloudflare/dist/entry.ts",
+  "build": {
+    "command": "npx --no-install topcoat-cloudflare build",
+    "cwd": ".",
+    "watch_dir": [
+      "src",
+      "assets",
+      "public",
+      "Cargo.toml",
+      "Cargo.lock",
+      "build.rs",
+      "styles.css",
+      "components.toml",
+      "rust-toolchain.toml",
+    ],
+  },
+  "compatibility_date": "2026-09-27",
+  "compatibility_flags": ["enable_request_signal"],
+  "assets": {
+    "directory": ".topcoat-cloudflare/dist/public",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    "run_worker_first": ["/*", "!/_topcoat/assets/*"],
+  },
+  "rules": [
+    {
+      "type": "Text",
+      "globs": ["**/*.txt"],
+      "fallthrough": true,
+    },
+  ],
+}

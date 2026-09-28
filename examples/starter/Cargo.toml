@@ -1,0 +1,32 @@
+[package]
+name = "topcoat-cloudflare-starter"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+topcoat = { workspace = true, features = [
+  "router",
+  "view",
+  "runtime",
+  "asset",
+  "discover",
+  "cookie",
+  "font-fontsource",
+] }
+topcoat-cloudflare.workspace = true
+worker.workspace = true
+wasm-bindgen.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[build-dependencies]
+# Tailwind runs on the build host; its native downloader stays out of the Worker.
+topcoat = { workspace = true, features = ["tailwind"] }
+
+[lints]
+workspace = true

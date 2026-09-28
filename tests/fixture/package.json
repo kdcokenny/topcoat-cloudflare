@@ -1,0 +1,14 @@
+{
+  "name": "@topcoat-cloudflare/fixture",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --live-reload",
+    "build": "topcoat-cloudflare build",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@topcoat-cloudflare/adapter": "0.1.0",
+    "wrangler": "4.142.0"
+  }
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "espresso",
+    "name": "Espresso",
+    "tasting_notes": "A quick, syrupy shot under a hazelnut crema.",
+    "price": 3.0,
+    "roast": "dark"
+  },
+  {
+    "slug": "cold-brew",
+    "name": "Cold Brew",
+    "tasting_notes": "Steeped overnight: chocolate, cherry, no acidity.",
+    "price": 4.0,
+    "roast": "dark"
+  },
+  {
+    "slug": "cappuccino",
+    "name": "Cappuccino",
+    "tasting_notes": "Equal parts espresso, steamed milk, and foam.",
+    "price": 5.0,
+    "roast": "medium"
+  },
+  {
+    "slug": "flat-white",
+    "name": "Flat White",
+    "tasting_notes": "Two ristretto shots under velvet microfoam.",
+    "price": 5.0,
+    "roast": "medium"
+  },
+  {
+    "slug": "pour-over",
+    "name": "Pour Over",
+    "tasting_notes": "A single-origin Ethiopian, bright and floral.",
+    "price": 6.0,
+    "roast": "light"
+  },
+  {
+    "slug": "mocha",
+    "name": "Mocha",
+    "tasting_notes": "Espresso and dark chocolate under whipped cream.",
+    "price": 6.0,
+    "roast": "dark"
+  }
+]

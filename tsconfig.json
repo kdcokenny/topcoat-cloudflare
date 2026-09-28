@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "resolveJsonModule": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
+    "rewriteRelativeImportExtensions": true,
+    "erasableSyntaxOnly": true,
+    "skipLibCheck": true,
+    "types": ["node"],
+    "noEmit": true
+  },
+  "include": ["packages/adapter/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "playwright*.ts"],
+  "exclude": ["packages/adapter/dist", "packages/adapter/native", "**/.topcoat-cloudflare"]
+}

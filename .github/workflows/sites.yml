@@ -1,0 +1,89 @@
+name: Real applications
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'examples/d1/**'
+      - 'examples/ui/**'
+      - 'examples/api/**'
+      - 'tests/sites/**'
+      - '.github/workflows/sites.yml'
+      - 'package*.json'
+      - '.node-version'
+      - 'rust-toolchain.toml'
+  pull_request:
+    paths:
+      - 'examples/d1/**'
+      - 'examples/ui/**'
+      - 'examples/api/**'
+      - 'tests/sites/**'
+      - '.github/workflows/sites.yml'
+      - 'package*.json'
+      - '.node-version'
+      - 'rust-toolchain.toml'
+  workflow_dispatch:
+    inputs:
+      application:
+        description: Application IDs separated by spaces, or all (includes build probes)
+        type: string
+        default: all
+      benchmark:
+        description: Include repeated load measurements and soak tests
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: real-applications-${{ github.ref }}-${{ inputs.application || 'examples' }}
+  cancel-in-progress: false
+
+jobs:
+  sites:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      WRANGLER_SEND_METRICS: 'false'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version-file: '.node-version'
+          cache: npm
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ~/.cargo/bin/worker-build
+            target/sites
+          key: sites-${{ runner.os }}-${{ hashFiles('tests/sites/locks/*.Cargo.lock', 'examples/*/Cargo.lock', 'rust-toolchain.toml') }}
+          restore-keys: sites-${{ runner.os }}-
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:unit
+      - run: npm run test:sites -- showcase quiz f4y
+        if: ${{ github.event_name != 'workflow_dispatch' }}
+      - name: Check selected applications
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        env:
+          APPLICATION: ${{ inputs.application }}
+          BENCHMARK: ${{ inputs.benchmark }}
+        run: |
+          args=()
+          if [[ "$APPLICATION" != all ]]; then read -r -a args <<< "$APPLICATION"; fi
+          if [[ "$BENCHMARK" == true ]]; then args+=(--benchmark); fi
+          npm run test:sites -- "${args[@]}"
+      - name: Preserve results
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: real-applications
+          path: |
+            artifacts/sites/*.json
+            artifacts/sites/*.png
+            artifacts/sites/*-failure.zip
+            artifacts/sites/logs/
+          retention-days: 14

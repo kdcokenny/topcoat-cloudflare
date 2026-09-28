@@ -1,0 +1,17 @@
+/target/
+node_modules/
+**/.topcoat-cloudflare/
+**/.wrangler/
+**/.dev.vars*
+**/.env*
+/test-results/
+/playwright-report/
+/artifacts/
+*.log
+.DS_Store
+
+/packages/adapter/native/
+/packages/adapter/release.json
+/packages/adapter/LICENSE
+
+/packages/adapter/dist/
