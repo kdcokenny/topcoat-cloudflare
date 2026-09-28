@@ -28,7 +28,7 @@ crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 topcoat = { version = "=0.9.0", default-features = false, features = ["router", "view", "runtime", "asset"] }
-topcoat-cloudflare = "=0.1.0"
+topcoat-cloudflare = "=0.2.0"
 worker = { version = "=0.8.7", features = ["http"] }
 wasm-bindgen = "0.2"
 ```
